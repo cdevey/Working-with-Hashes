@@ -3,4 +3,8 @@
 <p>here is a list of states...</p>
 
 <!-- iterate through each state in the array and put them into list items individually -->
-
+<select>
+  <% @states.each do | hash | %>
+  <option value="<%=hash[:id] %>"><%=hash[:name]%></option>
+  <%end%>
+</select>
