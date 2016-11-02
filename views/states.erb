@@ -5,6 +5,9 @@
 <!-- iterate through each state in the array and put them into list items individually -->
 <select>
   <% @states.each do | hash | %>
-  <option value="<%=hash[:id] %>"><%=hash[:name]%></option>
+  <% if hash[:id]="NY"%>
+    <option selected value="<%=hash[:id] %>"><%=hash[:name]%></option>
   <%end%>
+  <option value="<%=hash[:id] %>" <% if hash[:id]=="NY" %> selected="selected" <%end%>> <%=hash[:name]%></option>
+  <% end %>
 </select>
